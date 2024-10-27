@@ -1,13 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import PostsLists from './features/PostsLists'
 
 function App() {
 
   return (
     <>
-    <p>Hi you :) </p>
+    <div className="app">
+      <h1>React on Rails Blog App</h1>
+        <p>Hi you :) </p>
+
+        <PostsLists />
+    </div>
     </>
   )
 }
