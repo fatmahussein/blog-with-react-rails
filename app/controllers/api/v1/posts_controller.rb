@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: %i[ show update destroy ]
+  after_action :set_cors_headers
 
   # GET /posts
   def index
@@ -47,5 +48,10 @@ class Api::V1::PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :body)
+    end
+    def set_cors_headers
+      response.set_header('Access-Control-Allow-Origin', '*')
+      response.set_header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
+      response.set_header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept')
     end
 end
