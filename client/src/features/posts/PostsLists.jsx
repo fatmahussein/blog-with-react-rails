@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { API_URL } from '../../constants';
+import { API_URL } from '../../../constants';
 
 const PostsLists = () => {
   const [posts, setPosts] = useState([]);
@@ -10,7 +10,7 @@ const PostsLists = () => {
   useEffect(() => {
     async function getPosts() {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(API_URL, { mode: 'cors' , });
         if (response.ok) {
           const data = await response.json();
           setPosts(data);

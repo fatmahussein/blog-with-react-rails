@@ -1,17 +1,19 @@
+import {BrowserRouter as Router} from 'react-router-dom'
 import './App.css'
-import PostsLists from './features/PostsLists'
+import NavBar from './components/NavBar'
+import AppRoutes from './components/AppRoutes'
 
 function App() {
 
   return (
-    <>
+    <Router>
     <div className="app">
       <h1>React on Rails Blog App</h1>
         <p>Hi you :) </p>
-
-        <PostsLists />
+        <NavBar />
+        <AppRoutes />
     </div>
-    </>
+    </Router>
   )
 }
 
