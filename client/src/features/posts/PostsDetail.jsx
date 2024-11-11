@@ -28,12 +28,13 @@ function PostsDetails(){
           
         }, [id]);
         if(!post) return <h2>Loading...</h2>
+        
     return (
         <div>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
             <Link to='/'>Back to posts</Link>
-        </div>
+                 </div>
     )
 }
 
